@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 const TeamContext = createContext();
 
 const trainer = {
-  name: "Daniel",
+  name: "Carlos",
   team: [],
 };
 
@@ -18,7 +18,7 @@ const TeamProvider = ({ children }) => {
       }
   };
   const handleRemoveTeam = (id) => {
-    setUser({ ...user, team: [...user.team, id] });
+    setUser({ ...user, team: user.team.filter( idItem => idItem !== id) });
   };
 
   const userData = { user, handleAddTeam, handleRemoveTeam };
